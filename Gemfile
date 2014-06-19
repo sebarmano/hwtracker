@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 gem 'foundation-rails'
 gem 'redcarpet'
 gem 'simple_form'
+gem 'faker'
