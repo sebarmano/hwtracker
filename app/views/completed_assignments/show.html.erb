@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @completed_assignment.student %>
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @completed_assignment.assignment %>
+</p>
+
+<%= link_to 'Edit', edit_completed_assignment_path(@completed_assignment) %> |
+<%= link_to 'Back', completed_assignments_path %>
