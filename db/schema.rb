@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140619190308) do
 
-  create_table "assigments", force: true do |t|
+  create_table "assignments", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "date"
