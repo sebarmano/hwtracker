@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   resources :completed_assignments
-
   resources :students
-
   resources :assignments
-
   resources :teachers
+  resource  :login, only: [:create, :destroy]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
