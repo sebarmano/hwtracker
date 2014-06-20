@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Listing assignments</h1>
 
 <table>
@@ -13,19 +14,30 @@
 
   <tbody>
     <% @assignments.each do |assignment| %>
-      <tr>
-        <td><%= assignment.title %></td>
-        <td><%= assignment.description %></td>
-        <td><%= assignment.date %></td>
-        <td><%= assignment.due %></td>
-        <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+          <tr>
+            <td><%= assignment.title %></td>
+            <td><%= markdown(assignment.description) %></td>
+            <td><%= assignment.date %></td>
+            <td><%= assignment.due %></td>
+            <td><%= link_to 'Show', assignment %></td>
+            <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+            <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
     <% end %>
   </tbody>
 </table>
+<ul>
+<% @assignments.each do |assignment| %>
+  <% if assignment.date < Date.current %>
+      <li><%= assignment.date.to_formatted_s(:long_ordinal)%></li>
+  <% end %>
+<% end %>
+
+</ul>
+
+
 
 <br>
 
 <%= link_to 'New Assignment', new_assignment_path %>
+</div>
